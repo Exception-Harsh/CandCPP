@@ -18,7 +18,6 @@ int main()
         case 1:
             if (rear == x)
                 printf("\n Queue is Full");
-
             else
             {
                 printf("\n Enter no %d:", j++);

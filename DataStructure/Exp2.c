@@ -1,53 +1,63 @@
 #include <stdio.h>
-#define size 5
-int Q[size];
-int front, rear = 0;
+#include <stdlib.h>
+#define n 5
 
-void enqueue(int value)
+int main()
 {
-    if (rear == size)
-        printf("Queue is full");
-    else
+    int queue[n], ch = 1, front = 0, rear = 0, i, j = 1, x = n;
+    printf("Queue using Array");
+    printf("\n1.Insertion \n2.Deletion \n3.Display \n4.Exit");
+
+    while (ch)
     {
-        Q[rear] = value;
-        rear++;
-    }
-}
+        printf("\nEnter the Choice:");
+        scanf("%d", &ch);
 
-void dequeue()
-{
-    if (front == rear)
-        printf("\nQueue is empty");
-    else
-    {
-        printf("\nElement: %d", Q[front]);
-        front++;
-    }
-}
+        switch (ch)
+        {
+        case 1:
+            if (rear == x)
+                printf("\n Queue is Full");
 
-void display()
-{
-    int i;
-    for (i = front; i < rear; i++)
-    {
-        printf("\n%d", Q[i]);
-    }
-}
+            else
+            {
+                printf("\n Enter no %d:", j++);
+                scanf("%d", &queue[rear++]);
+            }
+            break;
 
-void main()
-{
-    enqueue(1);
-    enqueue(2);
-    enqueue(3);
-    enqueue(4);
-    enqueue(5);
-    enqueue(6);
-    display();
-    printf("\n");
-    dequeue(1);
-    dequeue(2);
-    dequeue(3);
-    dequeue(4);
-    dequeue(5);
-    dequeue(6);
+        case 2:
+            if (front == rear)
+            {
+                printf("\n Queue is empty");
+            }
+            else
+            {
+                printf("\n Deleted Element is %d", queue[front++]);
+                x++;
+            }
+            break;
+
+        case 3:
+            printf("\nQueue Elements are:\n ");
+            if (front == rear)
+                printf("\n Queue is Empty");
+            else
+            {
+                for (i = front; i < rear; i++)
+                {
+                    printf("%d", queue[i]);
+                    printf("\n");
+                }
+            }
+            break;
+
+        case 4:
+            exit(0);
+
+        default:
+            printf("Wrong Choice: please see the options");
+        }
+    }
+    return 0;
 }

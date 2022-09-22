@@ -16,24 +16,6 @@ void printList(struct Node *node)
     }
 }
 
-int main()
-{
-    struct Node *head = NULL;
-
-    insertAtEnd(&head, 1);
-    insertAtBeginning(&head, 2);
-    insertAtBeginning(&head, 3);
-    insertAtEnd(&head, 4);
-    insertAfter(head->next, 5);
-
-    printf("Linked list: ");
-    printList(head);
-
-    printf("\nAfter deleting an element: ");
-    deleteNode(&head, 3);
-    printList(head);
-}
-
 void insertAtBeginning(struct Node **head_ref, int new_data)
 {
     struct Node *new_node = (struct Node *)malloc(sizeof(struct Node));
@@ -100,4 +82,22 @@ void deleteNode(struct Node **head_ref, int key)
     prev->next = temp->next;
 
     free(temp);
+}
+
+int main()
+{
+    struct Node *head = NULL;
+
+    insertAtEnd(&head, 1);
+    insertAtBeginning(&head, 2);
+    insertAtBeginning(&head, 3);
+    insertAtEnd(&head, 4);
+    insertAfter(head->next, 5);
+
+    printf("Linked list: ");
+    printList(head);
+
+    printf("\nAfter deleting an element: ");
+    deleteNode(&head, 3);
+    printList(head);
 }

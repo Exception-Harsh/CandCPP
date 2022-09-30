@@ -5,6 +5,7 @@ int stack[100], top, maxSize, i;
 void display();
 void pop();
 void push();
+void peek();
 
 int main()
 {
@@ -15,7 +16,7 @@ int main()
     int choice;
 
     printf("*************MENU**************\n");
-    printf("\n\t 1: Push\n\t 2: Pop\n\t 3: Display\n\t 4: exit\n");
+    printf("\n\t 1: Push\n\t 2: Pop\n\t 3: Display\n\t 4: Peek\n\t 5: exit\n");
 
     do
     {
@@ -36,11 +37,15 @@ int main()
             display();
             break;
 
+        case 4:
+            peek();
+            break;
+
         default:
             printf("Wrong choice! Try Again");
             break;
         }
-    } while (choice != 4);
+    } while (choice != 5);
     return 0;
 }
 
@@ -85,4 +90,9 @@ void display()
     {
         printf("\n The STACK is empty");
     }
+}
+
+void peek()
+{
+    printf("%d", stack[top]);
 }

@@ -3,17 +3,19 @@ using namespace std;
 
 int main()
 {
-    for (int i = 1; i <= 4; i++)
+    int row, col;
+    cin >> row >> col;
+    for (int i = 1; i <= row; i++)
     {
-        for (int j = 1; j <= 5; j++)
+        for (int j = 1; j <= col; j++)
         {
-            if ((i == 2 || i == 3) && (j == 2 || j == 3 || j == 4))
+            if (i == 1 || i == row || j == 1 || j == col)
             {
-                cout << "  ";
+                cout << "* ";
             }
             else
             {
-                cout << "* ";
+                cout << "  ";
             }
         }
         cout << endl;

@@ -38,10 +38,8 @@ int pop()
 
 void EvalPostfix(char postfix[])
 {
-    int i;
+    int i, val, A, B;
     char ch;
-    int val;
-    int A, B;
 
     for (i = 0; postfix[i] != ')'; i++)
     {

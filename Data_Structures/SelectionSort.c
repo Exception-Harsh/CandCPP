@@ -3,7 +3,7 @@
 void selection(int arr[], int n)
 {
     int small;
-    for (int i = 0; i < n - 1; i++)
+    for (int i = 1; i < n ; i++)
     {
         small = i;
         for (int j = i + 1; j < n; j++)

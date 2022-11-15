@@ -78,11 +78,11 @@ struct node *delete (struct node *root, int x)
         else if (root->left_child == NULL || root->right_child == NULL)
         {
             struct node *temp;
-            if (root->left_child == NULL)
-                temp = root->right_child;
+            if (root->left_child != NULL)
+                temp = root->left_child;
 
             else
-                temp = root->left_child;
+                temp = root->right_child;
 
             free(root);
             return temp;

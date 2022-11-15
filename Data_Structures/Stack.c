@@ -12,9 +12,9 @@ void display();
 int main()
 {
     int data, choice;
+    printf("1 - Push\n2 - Pop\n3 - Display\n4 - Exit\n");
     while (1)
     {
-        printf("1 - Push\n2 - Pop\n3 - Display\n4 - Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
 

@@ -22,8 +22,7 @@ struct node *search(struct node *root, int x)
 
 struct node *newNode(int x)
 {
-    struct node *temp;
-    temp = malloc(sizeof(struct node));
+    struct node *temp = malloc(sizeof(struct node));
 
     temp->data = x;
     temp->left_child = NULL;
